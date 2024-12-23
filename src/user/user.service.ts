@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import axios from 'axios';
 import * as dotenv from 'dotenv';
 import { Model } from 'mongoose';
-import { User } from 'src/schemas/user.schema';
+import { User } from '../schemas/user.schema';
 import { CreateUserDto } from './create-user.dto';
 
 dotenv.config();
@@ -32,7 +32,6 @@ export class UserService {
 
       return response.data;
     } catch (error) {
-      console.log(this.atlasUrl);
       if (error.response) {
         console.error('Error details:', {
           status: error.response.status,
